@@ -4,6 +4,8 @@ const fs = require("fs");
 const path = require("path");
 const { parse } = require("csv-parse");
 const { Parser } = require("json2csv");
+
+const port = process.env.PORT || 3000;
 const data = {
   authors: [],
   books: [],
@@ -150,7 +152,7 @@ app.get("/save", (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is running on port 3000");
 });
 
